@@ -1,0 +1,115 @@
+@import "../../styles.scss";
+
+.header {
+  height: 8rem;
+  background-color:rgb(226, 168, 80);
+  font-size: 2rem;
+  position: sticky;
+  top: 0;
+  border-bottom: 1px solid;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.logo {
+  height: 6rem;
+  margin-left: 1.9rem;
+  border-radius:50%;
+  border: .5rem solid rgb(27, 88, 99);
+}
+
+.search-box {
+  flex: 0 0 40%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &__input {
+    font-weight: inherit;
+    font-size: inherit;
+    width: 90%;
+    background-color: $--color-grey-light-3;
+    border: none;
+    border-radius: 100px;
+    padding: 0.7rem 2rem;
+    margin-right: -3rem;
+    transition: all 0.2s;
+    &:focus {
+      width: 100%;
+      background-color: $--color-grey-light-4;
+      outline: none;
+    }
+  }
+  &__button {
+    display: flex;
+    align-items: center;
+    background-color: $--color-grey-light-3;
+    border: none;
+    &-icon {
+      height: 2rem;
+      width: 2rem;
+    }
+    &:focus {
+      outline: none;
+    }
+    &:active {
+      transform: translateY(2px);
+    }
+  }
+  &__input:focus + &__button {
+    background-color: $--color-grey-light-4;
+    outline: none;
+  }
+}
+
+.user-navigation {
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+  & > * {
+    padding: 0 2rem;
+    cursor: pointer;
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+  & > *:hover {
+    background-color: rgb(245, 197, 165);
+  }
+
+  &__icon-box {
+    position: relative;
+  }
+  &__icon {
+    height: 2.25rem;
+    width: 2.25rem;
+  }
+  &__notification {
+    font-size: 0.8rem;
+    height: 1.75rem;
+    width: 2rem;
+    border-radius: 50%;
+    background-color: palevioletred;
+    color: white;
+    position: absolute;
+    top: 1.8rem;
+    right: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.user-navigation__user {
+  display: flex;
+  align-items: center;
+
+  &-photo {
+    height: 4rem;
+    border-radius: 50%;
+  }
+  &-name {
+    margin-left: 1rem;
+    font-weight: bold;
+    color: rgb(74, 75, 72);
+  }
+}

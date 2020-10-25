@@ -1,0 +1,29 @@
+<div class="content">
+  <nav class="side-bar">
+
+    <ul class="side-navul">
+      <li class="side-navul__list" *ngFor="let lid of liDataa">
+        <a class="side-navul__link" href="#"><i
+            class="material-icons side-navul__icon">{{lid.mati}}</i>{{lid.name.toUpperCase()}}
+        </a> </li>
+    </ul>
+
+
+    <div class="legal">
+      &copy;2019 All right are reserved.
+    </div>
+  </nav>
+  <main class="hotel-view">
+    <app-main-content></app-main-content>
+  </main>
+</div>
+
+
+<!-- ===
+<div *ngIf="gender;then iffBlock;else elseeBlock"></div>
+<ng-template #iffBlock>
+    <h2>Iam Male</h2>
+</ng-template>
+<ng-template #elseeBlock>
+    <h2>Iam FeMale</h2>
+</ng-template> -->

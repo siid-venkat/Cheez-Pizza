@@ -1,0 +1,7 @@
+<div class="order-details" *ngIf="parentData;">
+  <p *ngIf="parentData.Status==='bill';">TotalAmount = {{parentData.Price+20}} rs*</p>
+  <p *ngIf="parentData.Status==='bill';"> *  Includes Gst(20 rs)</p>
+  <h1>Address</h1>
+  <p class="order-details__area">{{parentData.Area}}</p>
+  <p class="order-details__city">,{{parentData.City}}</p>
+</div>

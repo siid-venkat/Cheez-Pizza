@@ -1,0 +1,56 @@
+@import "../../styles.scss";
+.content {
+  display: flex;
+  overflow: auto;
+}
+.side-bar {
+  flex: 0 0 18%;
+  font-size: 1.4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: $--color-grey-dark-1;
+}
+.hotel-view {
+  min-height: 70rem;
+}
+// ====
+
+.side-navul {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  &__list {
+    margin-top: 2rem;
+    &:hover {
+      background-color: rgb(184, 122, 71);
+    }
+  }
+  &__link:link,
+  &__link:visited {
+    padding: 1rem 3rem;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    text-transform: capitalize;
+    color: $--color-grey-light-1;
+  }
+  &__icon {
+    height: 3rem;
+    width: 3rem;
+    fill: currentColor;
+    margin-right: 2rem;
+  }
+}
+
+.legal {
+  font-size: 1.2rem;
+  color: $--color-grey-light-1;
+  text-align: center;
+  padding: 4rem;
+}
+
+.material-icons {
+  padding: 0 10px;
+  color: rgb(0, 255, 213);
+}

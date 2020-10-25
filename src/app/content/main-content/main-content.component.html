@@ -1,0 +1,63 @@
+<main class="hotel-view">
+  <div class="detail">
+    <div class="description">
+      <div class="main-table">
+        <table class="table-items">
+          <tr>
+            <th>S.L</th>
+            <th>Image</th>
+            <th>ProductName</th>
+            <th>CustomerName</th>
+            <th>Price</th>
+            <th>Status Orders</th>
+            <th>Mobile</th>
+            <th>City</th>
+          </tr>
+          <tr *ngFor="let dataa of datas;index as ii" style="cursor: pointer;" (click)="selectData(dataa)">
+            <td>{{ii}}</td>
+            <td><img src="{{dataa.Image}}" class="table-items__icon" alt=""></td>
+            <td>{{dataa.ProductName}}</td>
+            <td>{{dataa.CustomerName.toUpperCase()}}</td>
+            <td>{{dataa.Price}}</td>
+            <td><button (click)=statusChange(dataa) class="status-button"
+                [style.color]="colorr?colorr:'rgb(32, 61, 85)'">{{dataa.Status}}</button></td>
+            <td>{{dataa.Phone}}</td>
+            <td>{{dataa.City}}</td>
+          </tr>
+        </table>
+      </div>
+      <div class="reffer">
+        <p class="reffer__friend">
+          CheezZ Pizza Now Available in Swigy.
+        </p>
+        <div class="reffer__images">
+          <img src="../../../assets/pizaa1.jpg" alt="img1" class="reffer__icons">
+          <img src="../../../assets/pizaa2.jpg" alt="img2" class="reffer__icons">
+          <img src="../../../assets/pizaa3.jpg" alt="img3" class="reffer__icons">
+          <img src="../../../assets/pizaa4.jpg" alt="img4" class="reffer__icons">
+        </div>
+      </div>
+    </div>
+
+    <div class="user-address">
+      <div class="address">
+        <h2 class="address__header">Individual Order Details</h2>
+        <div class="address__user">
+
+          <div *ngIf="selectedPerson;then iffBlock;else elseeBlock"></div>
+          <ng-template #iffBlock>
+            <img src="{{selectedPerson.Image}}" class="icon-order" alt="">
+            <p class="address__user-status"> Status : {{selectedPerson?selectedPerson.Status:''}} .</p>
+            <p>CustomerName : {{selectedPerson?selectedPerson.CustomerName:''}} .</p>
+          </ng-template>
+          <ng-template #elseeBlock>
+          </ng-template>
+          <p *ngIf="selectedPerson" class="address__user-prodName">Product Name :</p>
+            <p class="address__user-prodName">{{selectedPerson?selectedPerson.ProductName:''}}</p>
+        </div>
+        <app-submain-content [parentData]="selectedPerson"></app-submain-content>
+
+      </div>
+    </div>
+  </div>
+</main>

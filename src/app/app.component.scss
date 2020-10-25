@@ -1,0 +1,10 @@
+@import '../styles.scss';
+
+.container {
+  max-width: 120rem;
+  min-height: 30rem;
+  background: $--color-grey-light-4;
+  box-shadow: 0 2rem 4rem rgba(46, 184, 226, 0.644),
+    0 2rem 6rem rgba(0, 0, 0, $alpha: 0.8);
+    margin: 5rem auto;
+}
